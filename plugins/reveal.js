@@ -38,12 +38,12 @@ class Reveal {
 
   size() {
     return this.page.evaluate(_ => {
-      let size = Reveal.getComputedSlideSize(null, null);
+      /*let size = Reveal.getComputedSlideSize(null, null);
       calcWidth = size.width ? size.width : 1280;
-      calcHeight = size.height ? size.height : 720;
+      calcHeight = size.height ? size.height : 720;*/
       return {
-        width  : calcWidth,
-        height : calcHeight
+        width  : Reveal.config.width,//calcWidth,
+        height : Reveal.config.height//calcHeight
       };
     });
   }
