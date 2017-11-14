@@ -36,21 +36,6 @@ class Reveal {
       (URI(this.page.url()).query(true)['fragments'] || 'false').toLowerCase() === 'true');
   }
 
-  /*size() {
-    return this.page.evaluate(_ => {
-    let size = Reveal.getComputedSlideSize(null, null);
-    calcWidth = size.width ? size.width : (Reveal.config.width ? Reveal.config.width : 1280);
-    calcHeight = size.height ? size.height : (Reveal.config.height ? Reveal.config.height : 720);
-    console.log('Computed size ' + JSON.stringify(size));
-    console.log('Reveal config size ' + Reveal.config.width + 'x' + Reveal.config.height);
-    console.log('Calculated size ' + calcWidth + 'x' + calcHeight);
-    return {
-      width  : calcWidth,
-      height : calcHeight
-    };
-    });
-  }*/
-
   slideCount() {
     // TODO: the getTotalSlides API does not report the number of slides accurately
     // as it does not take stacks and some index-less fragments into account

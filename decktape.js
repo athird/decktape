@@ -302,9 +302,8 @@ async function exportSlide(plugin, page, printer) {
 
 async function printSlide(plugin, page, printer) {
   const buffer = await page.pdf({
-    //width               : options.size.width + 'px',
-    //height              : options.size.height + 'px',
-    format              : 'A4',
+    width               : options.size.width + 'px',
+    height              : options.size.height + 'px',
     printBackground     : true,
     pageRanges          : '1',
     displayHeaderFooter : false,
