@@ -298,6 +298,7 @@ async function exportSlide(plugin, page, printer) {
       await page.pdf({
         path          : path.join(options.screenshotDirectory, options.filename.replace('.pdf',
                          `_${plugin.currentSlide}_${resolution.width}x${resolution.height}.${options.screenshotFormat}`)),
+        printBackground : true,
         format        : 'A4'
       });
     }
