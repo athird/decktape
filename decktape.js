@@ -305,6 +305,7 @@ async function printSlide(plugin, page, printer) {
     width               : options.size.width + 'px',
     height              : options.size.height + 'px',
     printBackground     : true,
+    landscape           : true,
     pageRanges          : '1',
     displayHeaderFooter : false,
   });
