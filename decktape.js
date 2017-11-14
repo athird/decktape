@@ -283,18 +283,23 @@ async function exportSlide(plugin, page, printer) {
 
   if (options.screenshots) {
     for (let resolution of options.screenshotSize || [options.size]) {
-      await page.setViewport(resolution);
+      /*await page.setViewport(resolution);
       // Delay page rendering to wait for the resize event to complete,
       // e.g. for impress.js (may be needed to be configurable)
       await pause(1000);
       await page.screenshot({
         path           : path.join(options.screenshotDirectory, options.filename.replace('.pdf',
                          `_${plugin.currentSlide}_${resolution.width}x${resolution.height}.${options.screenshotFormat}`)),
-        fullPage       : true,
+        fullPage       : false,
         omitBackground : true,
       });
       await page.setViewport(options.size);
-      await pause(1000);
+      await pause(1000);*/
+      await page.pdf({
+        path          : path.join(options.screenshotDirectory, options.filename.replace('.pdf',
+                         `_${plugin.currentSlide}_${resolution.width}x${resolution.height}.${options.screenshotFormat}`)),
+        format        : 'A4'
+      });
     }
   }
 }
