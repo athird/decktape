@@ -290,7 +290,7 @@ async function exportSlide(plugin, page, printer) {
       await page.screenshot({
         path           : path.join(options.screenshotDirectory, options.filename.replace('.pdf',
                          `_${plugin.currentSlide}_${resolution.width}x${resolution.height}.${options.screenshotFormat}`)),
-        fullPage       : false,
+        fullPage       : true,
         omitBackground : true,
       });
       await page.setViewport(options.size);

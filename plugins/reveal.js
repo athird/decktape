@@ -36,7 +36,7 @@ class Reveal {
       (URI(this.page.url()).query(true)['fragments'] || 'false').toLowerCase() === 'true');
   }
 
-  size() {
+  /*size() {
     return this.page.evaluate(_ => {
     let size = Reveal.getComputedSlideSize(null, null);
     calcWidth = size.width ? size.width : (Reveal.config.width ? Reveal.config.width : 1280);
@@ -49,7 +49,7 @@ class Reveal {
       height : calcHeight
     };
     });
-  }
+  }*/
 
   slideCount() {
     // TODO: the getTotalSlides API does not report the number of slides accurately
