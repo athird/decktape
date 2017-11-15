@@ -179,7 +179,7 @@ const options = parser.parse(process.argv.slice(2));
 
   console.log('Loading page', options.url, '...');
   page.goto(options.url, { waitUntil: 'load', timeout: 60000 })
-    .then(response => console.log('Loading page finished with status:', response.status + ' ' + JSON.stringify(response)))
+    .then(response => console.log('Loading page finished with status:', response.status))
     .then(delay(options.loadPause))
     .then(_ => createPlugin(page))
     .then(plugin => configurePlugin(plugin)
